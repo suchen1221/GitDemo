@@ -85,7 +85,11 @@ We'll do this together, live, in a brand-new RStudio Project. Reference commands
 
 File \> New Project \> New Directory \> Quarto Project, check **"Create a git repository"**
 
+- it will ask you to name your directory and choose a home
+
 **2. Confirm Git is tracking the project**
+
+- an error message "can't determine the local repo's default branch" means you have no "commit" yet.
 
 ```{r}
 #| eval: false
@@ -157,12 +161,10 @@ Working **on your own machine**, repeat the demo with your own Quarto file:
 
 A. Push, then commit
 
-B. **Commit, then push**
+B. Commit, then push
 
 C. Pull, then commit
 
 D. Commit only — Git automatically uploads changes
-
-*Correct answer: B*
 
 *(65–70 min)*
