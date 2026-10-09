@@ -1,0 +1,168 @@
+---
+title: "SDS 313: Introduction to Data Science"
+subtitle: "Why Version Control: Git Basics with RStudio"
+author: "Department of Statistics and Data Sciences"
+format:
+  revealjs:
+    slide-number: true
+    footer: "SDS 313 — Week 10"
+    incremental: false
+editor: visual
+---
+
+## Welcome back {.smaller}
+
+- Pre-class: "Git Explained in 100 Seconds" + Instapoll question
+- Quick recap — **what does a commit represent, and how is that different from just saving a file?**
+- Today: why version control matters, the vocabulary you need, and your first Git-tracked Quarto project
+
+*(0–3 min)*
+
+## Setup Clinic {.smaller}
+
+Before we start: pair up with a neighbor and check that **both** of you have:
+
+1.  A GitHub account
+2.  Git installed (Tools \> Global Options \> Git/SVN shows a path)
+3.  A working token — run `usethis::git_sitrep()` in the console
+
+If `git_sitrep()` reports a problem, raise your hand — we'll fix it now before it costs you time later.
+
+*(3–10 min)*
+
+## Imagine This... {.smaller}
+
+You ran an analysis a few months ago. A classmate asks for your code. You find three files:
+
+- `analysis.R`
+- `analysis_FINAL.R`
+- `analysis_FINAL_v2_useThisOne.R`
+
+Which one is actually correct? Do you remember what changed between them? Could you prove it to someone else?
+
+**This is the problem version control solves.**
+
+## What Is Version Control? {.smaller}
+
+> Like "Track Changes" in Google Docs or Word — but for an entire project (code, data, figures, writeups) instead of one document.
+
+It gives you:
+
+- A complete history of every saved change
+- The ability to go back to any earlier point
+- A way to share your work so others see the *same* version you do
+
+*(10–18 min)*
+
+## Vocabulary: The Core Five {.smaller}
+
+::: incremental
+- **Repository (repo):** a project folder that Git is tracking, including its entire history
+- **Commit:** a labeled snapshot of your repo at one point in time
+- **Remote:** a copy of your repo hosted elsewhere (for us, on GitHub)
+- **Push:** send your local commits up to the remote
+- **Pull:** bring commits from the remote down to your machine
+:::
+
+## The Big Picture {.smaller}
+
+```{mermaid}
+flowchart LR
+  A[Your laptop<br/>local repo] -- commit --> A
+  A -- push --> B[(GitHub<br/>remote repo)]
+  B -- pull --> A
+```
+
+Committing happens **locally** and costs nothing. Pushing is the only step that touches GitHub.
+
+*(18–26 min)*
+
+## Live Demo: Your First Git-Tracked Project {.smaller}
+
+We'll do this together, live, in a brand-new RStudio Project. Reference commands below — you don't need to type these yet, just watch.
+
+**1. Create a new Version-Controlled RStudio Project**
+
+File \> New Project \> New Directory \> Quarto Project, check **"Create a git repository"**
+
+**2. Confirm Git is tracking the project**
+
+```{r}
+#| eval: false
+usethis::git_sitrep()
+```
+
+## Live Demo (continued) {.smaller}
+
+**3. Write a short Quarto doc** (`demo.qmd`) summarizing the `palmerpenguins` dataset:
+
+```{r}
+#| eval: false
+library(tidyverse)
+library(palmerpenguins)
+
+penguins |>
+  count(species)
+
+penguins |>
+  ggplot(aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot()
+```
+
+## Live Demo (continued) {.smaller}
+
+**4. Commit the work** — use the RStudio Git pane: check the box next to `demo.qmd`, click **Commit**, write a message like `"Add first penguin summary"`, click **Commit**.
+
+**5. Create a GitHub repo and push, in one step:**
+
+```{r}
+#| eval: false
+usethis::use_github()
+```
+
+**6. View it live on GitHub.com** — refresh the page, see the file, click on it, see the commit history.
+
+*(26–38 min)*
+
+## Your Turn: Guided Practice {.smaller}
+
+Working **on your own machine**, repeat the demo with your own Quarto file:
+
+1.  New Quarto Project with Git enabled (or add Git to an existing project: `usethis::use_git()`)
+2.  Create `my_penguins.qmd`. Load `tidyverse` and `palmerpenguins`.
+3.  Add **one summary table** (e.g., average bill length by species) and **one plot** of your choosing.
+4.  Render the document to check it works.
+5.  Commit — **at least twice**, with real messages (e.g., once after the table, once after the plot).
+6.  Run `usethis::use_github()` to create your repo and push.
+7.  Copy your repo URL and submit it to the Canvas discussion thread for today's class.
+
+*(38–65 min — ask for help any time!)*
+
+## Common Hiccups {.smaller}
+
+- **"Nothing to commit"** — did you save the file first?
+- **Push fails / asks for a password** — your token may not be stored; re-run `gitcreds::gitcreds_set()`
+- **Can't find the Git tab in RStudio** — close and reopen the Project after enabling Git
+- **`use_github()` errors about an existing repo** — pick a new repo name, or delete the old one on GitHub first
+
+## Wrap-Up {.smaller}
+
+- You now have a real, version-controlled Quarto project on GitHub
+- Next class: **collaborating** with your team on a shared repo — branches, pull requests, and your first merge conflict
+- Submit your repo link if you haven't yet
+
+## Exit Instapoll {.smaller}
+
+**You've just saved changes to your Quarto file. What two actions, in order, are needed to get those changes onto GitHub?**
+
+A. Push, then commit
+
+B. **Commit, then push**
+
+C. Pull, then commit
+
+D. Commit only — Git automatically uploads changes
+
+*Correct answer: B*
+
+*(65–70 min)*
