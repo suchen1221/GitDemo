@@ -1,0 +1,122 @@
+---
+title: "SDS 313: Introduction to Data Science"
+subtitle: "Collaborating with Git & GitHub"
+author: "Department of Statistics and Data Sciences"
+format:
+  revealjs:
+    slide-number: true
+    footer: "SDS 313 — Week 10"
+    incremental: false
+editor: visual
+---
+
+## Welcome back {.smaller}
+
+- Last class: repository, commit, remote, push, pull — and your first solo Git-tracked project
+- Quick check: did everyone's repo link from last class actually push? Raise your hand if `git_sitrep()` or your push failed and we haven't fixed it yet
+- Today: working with **teammates** on a **shared** repo
+
+*(0–5 min)*
+
+## Team Activity: Set Up Your Shared Repo {.smaller}
+
+As a team:
+
+1.  One teammate being the leader and creates a new repo on GitHub.com
+2.  Team Leader goes to **Settings \> Collaborators**, adds every teammate by GitHub username
+3.  Everyone else accepts the invite (check your email or GitHub notifications)
+4.  Every teammate clones the repo locally: File \> New Project \> Version Control \> Git, paste the repo URL
+5.  Confirm you can see the repo's files in RStudio before moving on
+
+*(5–15 min)*
+
+## New Vocabulary {.smaller}
+
+::: incremental
+- **Collaborator:** someone the repo owner has given permission to push changes
+- **Branch:** a parallel workspace off of `main` — changes here don't affect `main` until merged
+- **Pull Request (PR):** a proposal to merge one branch into another, open for teammates to review first
+- **Merge:** combining an approved PR's changes into `main`
+- **Conflict:** when two people changed the *same lines* and Git can't automatically combine them — a human has to decide
+:::
+
+## The Branch-and-Merge Picture {.smaller}
+
+```{mermaid}
+flowchart LR
+  M1[main] --> M2[main]
+  M1 -- branch --> F1[your branch]
+  F1 -- edit + commit + push --> F1
+  F1 -- pull request --> M2
+  M2 -- merge --> M2
+```
+
+Nothing on `main` changes until a pull request is reviewed and merged — that's what makes branches safe to experiment in.
+
+*(15 min mark)*
+
+## Live Demo: The Full Cycle {.smaller}
+
+On a demo repo, we'll do this together:
+
+1.  Add a collaborator
+2.  Create a branch: `usethis::pr_init("demo-branch")` or the RStudio Git pane's branch button
+3.  Edit a line, commit, push the branch
+4.  Open a pull request on GitHub.com
+5.  Review it — leave a comment, approve it
+6.  Merge it into `main`
+
+## Live Demo: A Conflict, On Purpose {.smaller}
+
+- We'll have **two "people"** (instructor + a volunteer) edit the **same line** of the same file, on two different branches
+- Both open pull requests — the second one can't merge cleanly
+- GitHub's web editor shows the conflict directly: you choose which version (or a blend of both) to keep
+- This is normal. It happens to everyone. The fix is usually a 30-second decision, not a crisis.
+
+*(15–28 min)*
+
+## Team Practice {.smaller}
+
+In your shared repo, as a team, create one file: `team_intro.qmd`.
+
+1.  Everyone adds their name to a **shared "Team Members" list at the top** of the file — yes, you will likely collide with a teammate here. That's intentional.
+2.  Each person also adds **their own section** below: a short summary + one plot about an assigned penguin species or island from `palmerpenguins` (split this up as a team so you're not duplicating work)
+3.  For your own section: create a branch, make your edits, commit, push, open a pull request
+4.  Review and merge **at least one teammate's PR** — don't just merge your own
+5.  When you hit the "Team Members" list conflict, resolve it together rather than one person overwriting the other
+
+*(28–60 min — ask for help any time!)*
+
+## Common Hiccups {.smaller}
+
+- **Invite email never arrived** — check GitHub.com directly under Notifications, or have the Team Lead re-send it
+- **"This branch has conflicts that must be resolved"** — expected! Use GitHub's web conflict editor, or pull `main` into your branch locally and fix it in RStudio
+- **Accidentally committed to `main` instead of a branch** — flag it, we'll fix it together rather than troubleshooting alone
+- **PR shows no changes / wrong branch** — double check you pushed the branch you think you're on (`git branch` or the RStudio branch dropdown)
+
+## Class Debrief {.smaller}
+
+- What broke for your team?
+- What was confusing about the conflict?
+- How did you end up resolving it?
+
+*(60–68 min)*
+
+## Wrap-Up {.smaller}
+
+- Your team now has a real, shared GitHub repo with a merged pull request and a resolved conflict behind it
+- **Homework this week(needs update):** submit via your personal GitHub repo link (not a direct upload); aim for at least two meaningful commits; optional 2–3 sentence reflection on a moment version control changed how you worked
+
+## Exit Instapoll {.smaller}
+
+**What is a pull request?**
+
+A. A request to download someone else's entire repository
+
+B. A proposal to merge changes from one branch into another, open for teammates to review before it's accepted
+
+C. A command that automatically resolves merge conflicts
+
+D. A way to permanently delete a branch once you're done with it
+
+*(68–70 min)*
