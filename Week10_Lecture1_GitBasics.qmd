@@ -13,7 +13,7 @@ editor: visual
 ## Welcome back {.smaller}
 
 - Pre-class: Week 9 reading + GitHub Pre-class Setup
-- Quick Instapoll recap — **what does a commit represent, and how is that different from just saving a file?**
+- Quick Instapoll recap — what does a **commit** represent, and how is that different from just saving a file?
 - Today: why version control matters, the vocabulary you need, and your first Git-tracked Quarto project
 
 *(0–3 min)*
@@ -48,9 +48,9 @@ Which one is actually correct? Do you remember what changed between them? Could 
 
 It gives you:
 
-- A complete history of every saved change
-- The ability to go back to any earlier point
-- A way to share your work so others see the *same* version you do
+- A complete history of **every saved change**
+- The ability to go back to **any earlier point**
+- A way to share your work so others see **the *same* version** you do
 
 *(10–18 min)*
 
@@ -73,7 +73,7 @@ flowchart LR
   B -- pull --> A
 ```
 
-Committing happens **locally** and costs nothing. Pushing is the only step that touches GitHub.
+**Committing** happens **locally** and costs nothing. **Pushing** is the only step that touches **GitHub**.
 
 *(18–26 min)*
 
@@ -135,18 +135,21 @@ You'll notice GitHub shows `demo.qmd` as plain source code, not the rendered rep
 - **Why:** GitHub's file viewer displays file contents — it doesn't run code or execute HTML for you. That's a deliberate security choice, not a bug.
 - Even the `.html` file Quarto renders will show up as raw code on GitHub, not as a live webpage.
 
-**To actually publish the rendered page:**
+**To actually publish the rendered page**: pushes your rendered HTML to a `gh-pages` branch in a public repo.
 
 ```{r}
 #| eval: false
 quarto publish gh-pages
 ```
 
-- Run once from the Terminal (or RStudio's **Render** dropdown \> **Publish**) in your project folder
+```{=html}
+<!-- 
+- Run once from the Terminal (or the **blue publish icon** dropdown \> **Publish Document**) in your project folder
 - Your repo must be **public** (free GitHub accounts can't publish private repos this way)
 - It pushes your rendered HTML to a `gh-pages` branch and opens the live page in your browser automatically
 
-We won't do this together today — optional if you want your project to look like a real website.
+We won't do this together today — optional if you want your project to look like a real website. -->
+```
 
 ## Your Turn: Guided Practice {.smaller}
 
@@ -158,7 +161,7 @@ Working **on your own machine**, repeat the demo with your own Quarto file:
 4.  Render the document to check it works.
 5.  Commit — **at least twice**, with real messages (e.g., once after the table, once after the plot).
 6.  Run `usethis::use_github()` to create your repo and push.
-7.  Copy your repo URL and submit it to the Canvas discussion thread for today's class.
+7.  Copy your repo URL and submit it to the Canvas assignment for today's class.
 
 *(38–65 min — ask for help any time!)*
 

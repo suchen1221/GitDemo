@@ -151,8 +151,8 @@ Department of Statistics and Data Sciences
 <section id="welcome-back" class="slide level2 smaller">
 <h2>Welcome back</h2>
 <ul>
-<li>Pre-class: “Git Explained in 100 Seconds” + Instapoll question</li>
-<li>Quick recap — <strong>what does a commit represent, and how is that different from just saving a file?</strong></li>
+<li>Pre-class: Week 9 reading + GitHub Pre-class Setup</li>
+<li>Quick Instapoll recap — what does a <strong>commit</strong> represent, and how is that different from just saving a file?</li>
 <li>Today: why version control matters, the vocabulary you need, and your first Git-tracked Quarto project</li>
 </ul>
 <p><em>(0–3 min)</em></p>
@@ -186,9 +186,9 @@ Department of Statistics and Data Sciences
 </blockquote>
 <p>It gives you:</p>
 <ul>
-<li>A complete history of every saved change</li>
-<li>The ability to go back to any earlier point</li>
-<li>A way to share your work so others see the <em>same</em> version you do</li>
+<li>A complete history of <strong>every saved change</strong></li>
+<li>The ability to go back to <strong>any earlier point</strong></li>
+<li>A way to share your work so others see <strong>the <em>same</em> version</strong> you do</li>
 </ul>
 <p><em>(10–18 min)</em></p>
 </section>
@@ -219,7 +219,7 @@ Department of Statistics and Data Sciences
 </div>
 </div>
 </div>
-<p>Committing happens <strong>locally</strong> and costs nothing. Pushing is the only step that touches GitHub.</p>
+<p><strong>Committing</strong> happens <strong>locally</strong> and costs nothing. <strong>Pushing</strong> is the only step that touches <strong>GitHub</strong>.</p>
 <p><em>(18–26 min)</em></p>
 </section>
 <section id="live-demo-your-first-git-tracked-project" class="slide level2 smaller">
@@ -245,6 +245,21 @@ Department of Statistics and Data Sciences
 <p><strong>5. Create a GitHub repo and push, in one step:</strong></p>
 <p><strong>6. View it live on GitHub.com</strong> — refresh the page, see the file, click on it, see the commit history.</p>
 <p><em>(26–38 min)</em></p>
+</section>
+<section id="wait-wheres-my-pretty-report" class="slide level2 smaller">
+<h2>Wait — Where’s My Pretty Report?</h2>
+<p>You’ll notice GitHub shows <code>demo.qmd</code> as plain source code, not the rendered report you saw in RStudio.</p>
+<ul>
+<li><strong>Why:</strong> GitHub’s file viewer displays file contents — it doesn’t run code or execute HTML for you. That’s a deliberate security choice, not a bug.</li>
+<li>Even the <code>.html</code> file Quarto renders will show up as raw code on GitHub, not as a live webpage.</li>
+</ul>
+<p><strong>To actually publish the rendered page</strong>: pushes your rendered HTML to a <code>gh-pages</code> branch in a public repo.</p>
+<!-- 
+- Run once from the Terminal (or the **blue publish icon** dropdown \> **Publish Document**) in your project folder
+- Your repo must be **public** (free GitHub accounts can't publish private repos this way)
+- It pushes your rendered HTML to a `gh-pages` branch and opens the live page in your browser automatically
+
+We won't do this together today — optional if you want your project to look like a real website. -->
 </section>
 <section id="your-turn-guided-practice" class="slide level2 smaller">
 <h2>Your Turn: Guided Practice</h2>
@@ -274,7 +289,7 @@ Department of Statistics and Data Sciences
 <ul>
 <li>You now have a real, version-controlled Quarto project on GitHub</li>
 <li>Next class: <strong>collaborating</strong> with your team on a shared repo — branches, pull requests, and your first merge conflict</li>
-<li>Submit your repo link if you haven’t yet</li>
+<li>Submit your repo link on Canvas assignment!</li>
 </ul>
 </section>
 <section id="exit-instapoll" class="slide level2 smaller">
