@@ -20,7 +20,7 @@ editor: visual
 
 ## Setup Clinic {.smaller}
 
-Before we start: pair up with a neighbor and check that **both** of you have:
+Before we start: check in with your teammates and make sure that **all** of you have:
 
 1.  A GitHub account
 2.  Git installed (Tools \> Global Options \> Git/SVN shows a path)
@@ -79,7 +79,7 @@ flowchart LR
 
 ## Live Demo: Your First Git-Tracked Project {.smaller}
 
-We'll do this together, live, in a brand-new RStudio Project. Reference commands below — you don't need to type these yet, just watch.
+We'll do this together, live, in a brand-new RStudio Project. **You don't need to type these yet, just watch.**
 
 **1. Create a new Version-Controlled RStudio Project**
 
@@ -135,7 +135,7 @@ You'll notice GitHub shows `demo.qmd` as plain source code, not the rendered rep
 - **Why:** GitHub's file viewer displays file contents — it doesn't run code or execute HTML for you. That's a deliberate security choice, not a bug.
 - Even the `.html` file Quarto renders will show up as raw code on GitHub, not as a live webpage.
 
-**To actually publish the rendered page**: pushes your rendered HTML to a `gh-pages` branch in a public repo.
+**To actually publish the rendered page**: pushes your rendered HTML to a `gh-pages` branch in a public repo. It is **beyond this class** so we will not spend time on this.
 
 ```{r}
 #| eval: false
